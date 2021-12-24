@@ -1,17 +1,30 @@
-# Neovim Lua Plugin
+# JumpTag
 
-This repository is a Neovim plugin template. Many thanks to <a href="https://github.com/ThePrimeagen">The Primeagen</a> for his <a href="https://www.youtube.com/watch?v=9L4sW047oow">tutorial</a>.
+This repository is a Neovim plugin to enable jumping to parent and sibling tags. It's written in Lua and makes use of the Treesitter AST to quickly make the jumps.
 
-To work on the plugin, you must start Neovim with this directory as the current working directory. From within this directory, start up Neovim:
+# Installation
 
-```
-nvim --cmd "set rtp+=$(pwd) ."
-```
-
-This will automatically source the `your-first-plugin.vim` file, which contains a function. This function will re-source the Lua plugin that we're working on before calling the function it contains. This will ensure that we are calling the latest version of our code whenever we make edits.
-
-We can call the vim function (and through it, the Lua function from our module) like this:
+Install with your favorite package manager, like Plug or Packer:
 
 ```
-:call MyFirstPlugin()
+use 'wbthomason/packer.nvim'
 ```
+
+# Features
+
+This package does not provide any default mappings by default. You can call the functions directly or via mappings.
+
+When hovering over a tag, you can call the following functions:
+
+- Jumps to the nearest parent
+`:lua require("jump-tag").jumpParent()`
+
+- Jumps to next sibling inside parent
+`:lua require("jump-tag").jumpNextSibling()`
+
+- Jumps to previous sibling inside parent
+`:lua require("jump-tag").jumpPrevSibling()`
+
+# Configuration
+
+By default this plugin does not create any mappings for you.
