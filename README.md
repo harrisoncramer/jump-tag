@@ -23,10 +23,10 @@ This package does not provide any default mappings by default. You can call the 
 -- Jumps to the nearest parent
 :lua require("jump-tag").jumpParent()
 
--- Jumps to next sibling inside parent
+-- Jumps to the next sibling inside the current parent
 :lua require("jump-tag").jumpNextSibling()
 
-- Jumps to previous sibling inside parent
+-- Jumps to the previous sibling inside the current parent
 :lua require("jump-tag").jumpPrevSibling()
 ```
 
