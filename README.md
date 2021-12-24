@@ -33,8 +33,6 @@ This package does not provide any default mappings by default. You can call the 
 Here are the mappings that I use:
 
 ```
--- Remapping function.
-
 vim.api.nvim_set_keymap('n', '<leader>55', ':lua require("jump-tag").jumpParent()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>5n', ':lua require("jump-tag").jumpNexSibling()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>5p', ':lua require("jump-tag").jumpPrevSibling()<CR>', { noremap = true, silent = true})
