@@ -2,6 +2,8 @@
 
 This repository is a Neovim plugin to enable jumping to parent and sibling tags. It's written in Lua and makes use of the Treesitter AST to quickly make the jumps.
 
+![Demo](./demo.gif)
+
 ## Requirements
 
 - Neovim 0.5+
