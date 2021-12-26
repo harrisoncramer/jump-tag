@@ -2,7 +2,7 @@ local ts_utils = require("nvim-treesitter.ts_utils")
 local constants = require("jump-tag.utils.constants")
 local f = require("jump-tag.utils.functions")
 
-local opts = {verbose = true}
+local opts = {verbose = false}
 
 -- Gets node at cursor
 local get_master_node = function()
@@ -24,7 +24,10 @@ local get_enclosing_element = function(ft, node)
     return parent
 end
 
-local get_parent = function(ft, node) return node:parent() end
+local get_parent = function(node)
+  if node == nil then return end
+  return node:parent()
+end
 
 local get_prev_element = function(ft, node)
     if (node == nil) then return end
@@ -96,7 +99,7 @@ local jumpParent = function()
     local ft = f.coerce_ft()
     local node = get_master_node()
     local element = get_enclosing_element(ft, node)
-    local parent = get_parent(ft, element)
+    local parent = get_parent(element)
     local tag_name = get_tag_name_from_element(ft, parent)
     ts_utils.goto_node(tag_name)
 end
