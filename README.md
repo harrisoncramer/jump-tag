@@ -34,7 +34,7 @@ This package does not provide any default mappings. You can call the functions d
 :lua require("jump-tag").jumpPrevSibling()
 ```
 
-Here are the mappings that I use, because I prefer the jumpings to be on `%` because of Neovim's built-in support for jumping between opening and closing tags.
+Here are the mappings that I use, because I prefer the jumpings to be on the `%` key:
 
 ```
 vim.api.nvim_set_keymap('n', '<leader>55', ':lua require("jump-tag").jumpParent()<CR>', { noremap = true, silent = true })
