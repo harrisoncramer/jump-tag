@@ -2,7 +2,7 @@ local constants = require("jump-tag.utils.constants")
 
 local function coerce_ft ()
   local ft = vim.bo.filetype
-  if ft == 'javascriptreact' then return 'jsx' end
+  if ft == 'javascriptreact' or ft == 'typescriptreact' then return 'jsx' end
   if ft == 'html' or ft == 'vue' then return 'html' end
 end
 
