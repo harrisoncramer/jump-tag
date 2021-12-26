@@ -21,7 +21,7 @@ use 'harrisoncramer/jump-tag'
 
 ## Features
 
-This package does not provide any default mappings by default. You can call the functions directly or via mappings of your own. When hovering over a tag or anything inside of a tag (like it's attributes) you can call the following functions:
+This package does not provide any default mappings. You can call the functions directly or via mappings of your own. When hovering over a tag or anything inside of a tag (like it's attributes) you can call the following functions:
 
 ```
 -- Jumps to the nearest parent
@@ -37,7 +37,7 @@ This package does not provide any default mappings by default. You can call the 
 :lua require("jump-tag").jumpChild()
 ```
 
-Here are the mappings that I use, because I prefer the jumpings to be on `%` because of Neovim's built-in support for jumping between opening and closing tags.
+Here are the mappings that I use, because I prefer the jumpings to be on the `%` key:
 
 ```
 vim.api.nvim_set_keymap('n', '<leader>55', ':lua require("jump-tag").jumpParent()<CR>', { noremap = true, silent = true })
