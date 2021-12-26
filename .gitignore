@@ -1,2 +1,7 @@
 *.html
+*.jsx
+*.vue
+node_modules
+package.json
+package-lock.json
 plugin/*
