@@ -29,6 +29,15 @@ local get_parent = function(node)
   return node:parent()
 end
 
+local get_child = function(ft, node)
+  if node == nil then return end
+  for child in node:iter_children() do
+    if f.has_value(constants.elements[ft], child:type()) then
+      return child
+    end
+  end
+end
+
 local get_prev_element = function(ft, node)
     if (node == nil) then return end
     local sibling = node:prev_sibling()
@@ -104,6 +113,15 @@ local jumpParent = function()
     ts_utils.goto_node(tag_name)
 end
 
+local jumpChild = function()
+    local ft = f.coerce_ft()
+    local node = get_master_node()
+    local element = get_enclosing_element(ft, node)
+    local child = get_child(ft, element)
+    local tag_name = get_tag_name_from_element(ft, child)
+    ts_utils.goto_node(tag_name)
+end
+
 local jumpNextSibling = function()
     local ft = f.coerce_ft()
     local node = get_master_node()
@@ -125,5 +143,6 @@ end
 return {
     jumpParent = jumpParent,
     jumpNextSibling = jumpNextSibling,
-    jumpPrevSibling = jumpPrevSibling
+    jumpPrevSibling = jumpPrevSibling,
+    jumpChild = jumpChild
 }

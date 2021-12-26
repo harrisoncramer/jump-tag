@@ -32,6 +32,9 @@ This package does not provide any default mappings by default. You can call the 
 
 -- Jumps to the previous sibling inside the current parent
 :lua require("jump-tag").jumpPrevSibling()
+
+-- Jumps to the child of the current node
+:lua require("jump-tag").jumpChild()
 ```
 
 Here are the mappings that I use, because I prefer the jumpings to be on `%` because of Neovim's built-in support for jumping between opening and closing tags.
@@ -40,4 +43,5 @@ Here are the mappings that I use, because I prefer the jumpings to be on `%` bec
 vim.api.nvim_set_keymap('n', '<leader>55', ':lua require("jump-tag").jumpParent()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>5n', ':lua require("jump-tag").jumpNexSibling()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>5p', ':lua require("jump-tag").jumpPrevSibling()<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>5c', ':lua require("jump-tag").jumpChild()<CR>', { noremap = true, silent = true})
 ```
