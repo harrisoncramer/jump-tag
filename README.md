@@ -1,6 +1,6 @@
 # JumpTag 🏃
 
-This repository is a Neovim plugin to enable jumping to parent and sibling tags. It's written in Lua and makes use of the Treesitter AST to quickly make the jumps.
+This repository is an extremely lightweight Neovim plugin that enables jumping to parent and sibling tags. It's written in Lua and makes use of the Treesitter AST to quickly make the jumps.
 
 It's designed to work for plain HTML, Vue and React.
 
